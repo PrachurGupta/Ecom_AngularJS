@@ -1,0 +1,43 @@
+<div
+  class="container"
+  ng-controller="shoppingCTR">
+  <div class="row">
+    <div class="col-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h5>My Cart</h5>
+        </div>
+        <div class="panel-body table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                ng-repeat="cart in carts"
+                ng-init="setTotal(cart)">
+                <td>{{cart.p_name}}</td>
+                <td>₹{{cart.p_price}}</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-danger">
+                    X
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>₹{{total}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
