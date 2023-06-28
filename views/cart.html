@@ -1,8 +1,6 @@
-<div
-  class="container"
-  ng-controller="shoppingCTR">
+<div class="container">
   <div class="row">
-    <div class="col-4">
+    <div class="col-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h5>My Cart</h5>
@@ -12,31 +10,66 @@
             <thead>
               <tr>
                 <th>Product</th>
+                <th>Quantity</th>
                 <th>Price</th>
-                <th></th>
+                <th>Total Price</th>
               </tr>
             </thead>
             <tbody>
               <tr
-                ng-repeat="cart in carts"
-                ng-init="setTotal(cart)">
-                <td>{{cart.p_name}}</td>
-                <td>₹{{cart.p_price}}</td>
+                ng-repeat="i in totalItems"
+                ng-init="setTotal(i)">
+                <td>{{i.p_name}}</td>
+                <td>
+                  <!-- <span ng-if="i.p_count > 1"> -->
+                  ({{i.p_count}})
+                  <!-- </span> -->
+                </td>
+                <td>₹{{i.p_price}}</td>
+                <td>
+                  {{i.p_count}} * {{i.p_price}} =
+                  ₹{{i.p_count * i.p_price}}
+                </td>
                 <td>
                   <button
                     type="button"
-                    class="btn btn-danger">
+                    class="btn btn-danger"
+                    ng-click="removeProduct(i); computeTotal()">
                     X
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    ng-click="addToCart(i); computeTotal()">
+                    +
+                  </button>
+
+                  <button
+                    class="btn btn-primary"
+                    ng-click="decrementProduct(i); computeTotal()">
+                    -
                   </button>
                 </td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td>₹{{total}}</td>
+                <td></td>
+                <td></td>
+                <td
+                  ng-if="totalPrice > 0"
+                  style="padding-left: 90px">
+                  ₹{{totalPrice}}
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
+        <button
+          class="btn btn-primary"
+          ng-disabled="totalPrice === 0"
+          ng-controller="CheckOutController"
+          ng-click="checkOutMessage()">
+          Check Out
+        </button>
       </div>
     </div>
   </div>

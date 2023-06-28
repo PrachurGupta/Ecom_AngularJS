@@ -2,7 +2,27 @@
   class="container"
   ng-controller="DetailsController">
   <h1>Product Details Page</h1>
-  <h2>{{ product.p_name }}</h2>
-  <p>Price: {{ product.p_price }}</p>
-  <a href="#!/cart">Go to Cart</a>
+  <hr style="border-top: 1px dotted #ccc" />
+  <div>
+    <span style="font-size: 16px">
+      {{product.p_name}}
+    </span>
+    <img ng-src="{{product.p_image}}" />
+    <span style="font-size: 16px">
+      Price: ₹{{product.p_price}}
+    </span>
+  </div>
+
+  <!-- <div>
+    <h2>{{ product.p_name }}</h2>
+    <p>Price: {{ product.p_price }}</p>
+  </div> -->
+  <h3 class="text-primary">
+    <a
+      class="nav-link active"
+      aria-current="page"
+      href="#!/cart">
+      Cart
+    </a>
+  </h3>
 </div>

@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "p_id": "1",
+      "p_count": 1,
+      "p_name": "ASUS VivoBook 14",
+      "p_image": "images/ASUS.jpg",
+      "p_price": 35990
+    },
+    {
+      "p_id": "2",
+      "p_count": 1,
+      "p_name": "HP Laptop 14s, 12th Gen",
+      "p_image": "images/HP.jpg",
+      "p_price": 40990
+    },
+    {
+      "p_id": "3",
+      "p_count": 1,
+      "p_name": "Lenovo IdeaPad Slim 3",
+      "p_image": "images/Lenovo.jpg",
+      "p_price": 34990
+    },
+    {
+      "p_id": "4",
+      "p_count": 1,
+      "p_name": "Lenovo IdeaPad Slim 4",
+      "p_image": "images/Lenovo.jpg",
+      "p_price": 34990
+    }
+  ]
+}

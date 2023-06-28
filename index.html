@@ -13,18 +13,19 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="app\lib\angular-route.min.js"></script>
-    <!-- <script src="app/app.js"></script> -->
-    <script src="try.js"></script>
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app\app.js"></script>
+    <script src="app\component\controllers\CartController.js"></script>
+    <script src="app\component\controllers\CheckOutController.js"></script>
+    <script src="app\component\controllers\DetailsController.js"></script>
+    <script src="app\component\controllers\shoppingCTR.js"></script>
   </head>
   <body
     ng-app="shoppingcart"
     ng-controller="shoppingCTR">
-    <!-- navbar starts -->
     <header
       ng-include
       src="'views/header.html'"></header>
-    <!-- navbar ends -->
-
     <main ng-view></main>
   </body>
 </html>

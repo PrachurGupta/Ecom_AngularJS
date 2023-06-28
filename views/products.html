@@ -12,10 +12,9 @@
           <span style="font-size: 16px">
             {{product.p_name}}
           </span>
-          <a href="#!/details/{{ product.p_id }}"
-            >{{ console.log("Worked")}}
-          </a>
-          <img ng-src="{{product.p_image}}" />
+          <a href="#!/details/{{ product.p_id }}">
+            <img ng-src="{{product.p_image}}"
+          /></a>
           <div>
             <label style="font-size: 14px">
               Price: ₹{{product.p_price}}
